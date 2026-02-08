@@ -584,6 +584,8 @@ Restituire il numero di nodi nella lista.
 
 ### Come funziona
 
+
+### Come combinarli
 ```
   HEAD
     │
@@ -595,8 +597,6 @@ Restituire il numero di nodi nella lista.
 
 Restituisco 3
 ```
-
-### Come combinarli
 
 1. Inizializza un contatore a 0
 2. Scorri tutta la lista incrementando il contatore ad ogni nodo
