@@ -60,15 +60,40 @@ public void aggiungiInPosizione(T dato, int posizione) {
     }
     
     if (curr == null) {
-        System.out.println("posizione negativa ");  // throw new IndexOutOfBoundsException("Posizione oltre la fine della lista");
+        System.out.println("posizione oltre la lista ");  // throw new IndexOutOfBoundsException("Posizione oltre la fine della lista");
     }
     
     Nodo<T> Nodo = new Nodo<>(dato);
     Nodo.next = curr.next;
     curr.next = Nodo;
 }
+public T leggiTesta() {
+    if (head == null) {
+        throw new NoSuchElementException("Lista vuota");
+    }
+    return head.dato;
+}
+ 
+public T leggiTesta() {
+    if (head == null) {
+        throw new NoSuchElementException("la lista è vuota");
+    }
+    return head.dato;
+}
 
- }
+public T leggiCoda() {
+    if (head == null) {
+        throw new NoSuchElementException("Lista vuota");
+    }
+    
+    Nodo<T> curr = head;
+    while (curr.next != null) {
+        curr = curr.next;
+    }
+    return curr.dato;
+}
+
+}
 
 
 }
