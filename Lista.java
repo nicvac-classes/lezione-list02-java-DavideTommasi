@@ -92,7 +92,25 @@ public T leggiCoda() {
     }
     return curr.dato;
 }
-
+public T leggiInPosizione(int posizione) {
+    if (posizione < 0) {
+        throw new IndexOutOfBoundsException("Posizione negativa");
+    }
+    
+    Nodo<T> curr = head;
+    int i = 0;
+    
+    while (curr != null && i < posizione) {
+        curr = curr.next;
+        i++;
+    }
+    
+    if (curr == null) {
+        throw new IndexOutOfBoundsException("Posizione oltre la fine della lista");
+    }
+    
+    return curr.dato;
+}
 }
 
 
