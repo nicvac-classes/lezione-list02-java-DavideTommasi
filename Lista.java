@@ -111,6 +111,50 @@ public T leggiInPosizione(int posizione) {
     
     return curr.dato;
 }
+
+
+
+
+
+public int size() {
+    int c = 0;
+    Nodo<T> curr = head;
+    
+    while (curr != null) {
+        c++;
+        curr = curr.next;
+    }
+    
+    return c;
+}
+
+public boolean contiene(T dato) {
+    Nodo<T> curr = head;
+    
+    while (curr != null) {
+        if (curr.dato.equals(dato)) {
+            return true;
+        }
+        curr = curr.next;
+    }
+    
+    return false;
+}
+
+public int indexOf(T dato) {
+    Nodo<T> curr = head;
+    int i = 0;
+    
+    while (curr != null) {
+        if (curr.dato.equals(dato)) {
+            return i;
+        }
+        curr = curr.next;
+        i++;
+    }
+    
+    return -1;
+}
 }
 
 
