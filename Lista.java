@@ -155,6 +155,60 @@ public int indexOf(T dato) {
     
     return -1;
 }
+public boolean cancella(T dato) {
+        if (head == null) {
+            return false;
+        }
+        
+        if (head.dato.equals(dato)) {
+            head = head.next;
+            return true;
+        }
+        
+        Nodo<T> prec = head;
+        Nodo<T> curr = head.next;
+        
+        while (curr != null) {
+            if (curr.dato.equals(dato)) {
+                prec.next = curr.next;
+                return true;
+            }
+            prec = corrente;
+            curr = corrente.next;
+        }
+        
+        return false;
+    }
+
+ public T cancellaInPosizione(int pos) {
+        if (pos < 0 || head == null) {
+            throw new IndexOutOfBoundsException("posizione nn valida");
+        }
+        
+        if (pos == 0) {
+            T dato = head.dato;
+            head = head.next;
+            return dato;
+        }
+        
+        Nodo<T> prec = head;
+        int i = 0;
+        
+        while (prec.next != null && i < pos - 1) {
+            prec = prec.next;
+            i++;
+        }
+        
+        if (prec.next == null) {
+            throw new IndexOutOfBoundsException("posizione oltre la lista");
+        }
+        
+        T dato = prec.next.dato;
+        prec.next = prec.next.next;
+        return dato;
+    }
+
+
 }
 
 
