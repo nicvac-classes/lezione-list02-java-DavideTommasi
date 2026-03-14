@@ -208,6 +208,37 @@ public boolean cancella(T dato) {
         return dato;
     }
 
+public void concatena(Lista<T> Lista2) {
+    if (Lista2 == null || Lista2.head == null) {
+        return;
+    }
+    
+    if (head == null) {
+        head = Lista2.head;
+        return;
+    }
+    
+    Nodo<T> curr = head;
+    while (curr.next != null) {
+        curr = curr.next;
+    }
+    curr.next = Lista2.head;
+}
+
+public String toString() {
+    StringBuilder attributi = new StringBuilder();
+    Nodo<T> curr = head;
+    
+    while (curr != null) {
+        attributi.append(curr.dato);
+        attributi.append(" -> ");
+        curr = curr.next;
+    }
+    attributi.append("null");
+    
+    return attributi.toString();
+}
+
 
 }
 
